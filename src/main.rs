@@ -1,4 +1,6 @@
 mod routes;
+#[cfg(test)]
+mod test_helpers;
 use tokio::net::TcpListener;
 use crate::routes::health_check::health_check;
 
