@@ -8,7 +8,8 @@ axum = "0.8.4"
 tokio = { version = "1.46.1", features = ["full"] }
 serde_json = "1.0"
 chrono = { version = "0.4", features = ["serde"] }
-sqlx = { version = "0.8.6", features = ["runtime-tokio-rustls", "postgres", "chrono", "uuid"], optional = true }
+sqlx = { version = "0.8.6", features = ["runtime-tokio-rustls", "postgres", "chrono", "uuid", "migrate"] }
+dotenvy = "0.15"
 testcontainers = { version = "0.24.0", optional = true }
 testcontainers-modules = { version = "0.12.1", features = ["postgres"], optional = true }
 
@@ -20,7 +21,7 @@ testcontainers-modules = { version = "0.12.1", features = ["postgres"] }
 sqlx = { version = "0.8.6", features = ["runtime-tokio-rustls", "postgres", "chrono", "uuid"] }
 
 [features]
-testing = ["sqlx", "testcontainers", "testcontainers-modules"]
+testing = ["testcontainers", "testcontainers-modules"]
 
 [build-dependencies]
 chrono = "0.4.41"
